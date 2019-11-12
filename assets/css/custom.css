@@ -1,0 +1,428 @@
+@font-face {
+    font-family: 'berthold_akzidenz_grotesk_bBd';
+    src: url('../fonts/berthold_akzidenz_grotesk_be_bold-webfont.eot');
+    src: url('../fonts/berthold_akzidenz_grotesk_be_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/berthold_akzidenz_grotesk_be_bold-webfont.woff2') format('woff2'),
+         url('../fonts/berthold_akzidenz_grotesk_be_bold-webfont.woff') format('woff'),
+         url('../fonts/berthold_akzidenz_grotesk_be_bold-webfont.svg#berthold_akzidenz_grotesk_bBd') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'berthold_akzidenz_grotesk_bRg';
+    src: url('../fonts/berthold_akzidenz_grotesk_be_regular-webfont.eot');
+    src: url('../fonts/berthold_akzidenz_grotesk_be_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/berthold_akzidenz_grotesk_be_regular-webfont.woff2') format('woff2'),
+         url('../fonts/berthold_akzidenz_grotesk_be_regular-webfont.woff') format('woff'),
+         url('../fonts/berthold_akzidenz_grotesk_be_regular-webfont.svg#berthold_akzidenz_grotesk_bRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'sanchezregular';
+    src: url('../fonts/sanchez-regular-webfont.eot');
+    src: url('../fonts/sanchez-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/sanchez-regular-webfont.woff2') format('woff2'),
+         url('../fonts/sanchez-regular-webfont.woff') format('woff'),
+         url('../fonts/sanchez-regular-webfont.svg#sanchezregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* General styling */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: 'berthold_akzidenz_grotesk_bRg';
+  background: #fff;
+  font-size: 14px;
+}
+.container {
+    max-width: 1215px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+img {max-width: 100%;}
+h1 {
+	font-size: 72px;
+	text-align: center;
+	text-transform: uppercase;
+	color: #fff;
+	max-width: 1000px;
+    background-color: #c9602c;
+    margin: 30px auto 0 auto;
+    padding: 9px;
+    font-family: 'sanchezregular';
+    font-weight: 400;
+}
+h3 {font-size: 30px;}
+h5 {
+	color: #4b4e53;
+	font-size: 14px;
+	font-weight: 400;
+}
+nav {
+  background: #fff;
+  padding: 13px 10px 13px 20px;
+}
+ul {list-style-type: none;}
+strong {font-family: 'berthold_akzidenz_grotesk_bBd';}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {text-decoration: underline;}
+.logo a:hover {text-decoration: none;}
+header ul li {font-size: 16px;}
+.logo {
+    flex: 1;
+    text-align: left;
+}
+.item {
+  display: block;
+  width: auto;
+}
+header ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+/*************** Header - Seer *******************/
+header {
+	background:url(../images/header-back_seer.jpg) no-repeat center top;
+	background-size: cover;
+	min-height: 218px;
+	padding-bottom: 30px;
+}
+.item a {
+	padding: 15px;
+	background-color: #00adbb;
+	border-radius: 6px;
+	display: inline-block;
+	font-size: 14px;
+	font-family: 'berthold_akzidenz_grotesk_bBd';
+	text-transform: uppercase;
+}
+header ul li:nth-child(2) a {margin-right: 10px;}
+header ul li:nth-child(3) a {background-color: #682f64;}
+.logo img {
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+}
+/*********** Collapse - Seer ***************/
+.checkboxes {
+	background-color: #f5fafa;
+	padding: 20px 0 36px 0;
+}
+.checkbox_boxes {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 30px;
+}
+.box {flex: 1 0 12.5%;}
+.checkbox_boxes p {
+	text-transform: uppercase;
+	color: #00adbb;
+	margin-bottom: 14px;
+}
+.contain {
+	display: block;
+	position: relative;
+	padding-left: 30px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	font-size: 12px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-family: 'berthold_akzidenz_grotesk_bBd';
+	color: #4b4e53;
+}
+.contain input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 16px;
+	width: 16px;
+	background-color: #fff;
+	border: 2px solid #dddddd;
+	border-radius: 4px;
+}
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+.contain input:checked ~ .checkmark:after {display: block;}
+.contain .checkmark:after {
+    left: 3px;
+    top: 0px;
+    width: 3px;
+    height: 6px;
+    border: solid #682f64;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.hiding a {
+	font-family: 'berthold_akzidenz_grotesk_bRg';
+	color: #c9602c;
+	display: inline-block;
+	text-transform: uppercase;
+}
+.hiding a:first-child {
+	font-family: 'berthold_akzidenz_grotesk_bBd';
+	color: #4b4e53;
+}
+.hiding a:first-child:before {
+	content: url("../images/arrow_bottom_seer.png");
+	margin-right: 10px;
+	transform: rotate(0deg);
+	display: inline-block;
+	transition: all 0.5s ease;
+}
+.hiding a.active:first-child:before {transform: rotate(180deg);}
+.hiding a:first-child:after {
+	content: "";
+	border-right: 2px solid #787c80;
+	margin: 0 10px;
+}
+.inputgrid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.inputgrid .checkbox {flex: 1 0 50%;}
+.beer {
+	margin-left: -26px;
+    margin-right: 26px;
+}
+/*************Team - Seer ***************/
+.team {padding: 30px 0 90px 0;}
+.team .row {
+	display: flex;
+	flex-wrap: wrap;
+}
+.team a {
+	flex: 1 0 20%;
+	max-width: 20%;
+   align-items: center;
+    justify-content: center;
+}
+.team .person {
+	text-align: center;
+	margin-bottom: 30px;
+}
+.team .hero-image + h5 {
+	margin-top: 13px;
+	text-transform: uppercase;
+	font-family: 'berthold_akzidenz_grotesk_bBd';
+}
+.hero-image {
+	width: 148px;
+    height: 148px;
+    margin: 0 auto;
+    position: relative;
+    overflow-y: hidden;
+}
+.team a .hero-image:after {
+	content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background: linear-gradient(to bottom, #009ec3 1%,#682f64 100%);
+    border-radius: 100%;
+    opacity: 0.4;
+    filter: brightness(1.75);
+}
+.team a:hover .hero-image:after {
+	opacity: 0;
+	filter: brightness(1);
+	transition: all 0.3s ease;
+}
+.hide {display: none;}
+.show {display: inherit;}
+/*************Social Icons - Seer ***************/
+.social {
+	text-align: center;
+	padding-bottom: 60px;
+}
+.social a {
+	position: relative;
+	display: inline-block;
+}
+.social a:hover img {
+	opacity: 0.8;
+}
+.arrow_box {
+    position: relative;
+    background: #eaeaea;
+    border: 4px solid #eaeaea;
+    display: inline-block;
+    position: absolute;
+    width: 44px;
+    top: -55px;
+    height: 44px;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	color: #585a5f;
+}
+.arrow_box:after, .arrow_box:before {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.arrow_box:before {
+    border-color: rgba(234, 234, 234, 0);
+    border-top-color: #eaeaea;
+    border-width: 11px;
+    margin-left: -10px;
+}
+/*************Modal window - Seer ***************/
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+}
+.close:hover {filter: invert(0%) sepia(4%) saturate(0%) hue-rotate(293deg) brightness(95%) contrast(105%);}
+.blue_text {color: #00adbb;}
+.mask,.maskabout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 50;
+  visibility: hidden;
+  opacity: 0;
+}
+.modal {
+	position: fixed;
+    top: 50%;
+    left: 0;
+    right: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: -150px;
+    background: #ffffff;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    padding: 30px 50px 50px 50px;
+	font-size: 18px;
+	color: #4b4e53;
+}
+.modal.aboutsite {
+	background-color: #00adbb;
+	color: #fff;
+	text-align: center;
+	margin-top: -250px;
+}
+.modal.aboutsite h2 {
+	color: #a3d9df;
+	font-size: 14px;
+	text-transform: uppercase;
+	margin-bottom: 15px;
+}
+.modal.aboutsite h3 {
+	font-family: 'sanchezregular';
+	font-weight: 400;
+}
+.modal.aboutsite h3 + img {margin: 30px 0;}
+.modal.aboutsite .close img {filter: invert(100%) sepia(0%) saturate(13%) hue-rotate(234deg) brightness(1004%) contrast(104%);}
+.modal.aboutsite .close:hover img {filter: invert(0%) sepia(4%) saturate(0%) hue-rotate(324deg) brightness(95%) contrast(105%);}
+.modal.aboutsite h4 {
+	color: #a3d9df;
+	margin-bottom: 78px;
+	font-size: 16px;
+}
+.arrowabout {
+	position: absolute;
+    left: 40px;
+    top: 230px;
+}
+.aboutsite p a {text-decoration: underline;}
+.aboutsite p a:hover {text-decoration: none;}
+.arrowabout + .arrowabout {
+    left: auto;
+    right: 40px;
+    transform: rotate(180deg);
+}
+.active {
+  visibility: visible;
+  opacity: 1;
+}
+.mask.active + .modal,.maskabout.active + .modal {
+  visibility: visible;
+  opacity: 1;
+}
+.card_info {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	padding-left: 66px;
+
+}
+.card_info:before {
+	content: url(../images/line_seer.png);
+	position: absolute;
+	left: 30px;
+}
+.card_info h3 {
+	font-family: 'sanchezregular';
+	color: #c9602c;
+}
+.card_info li,.card_info h3 {margin-bottom: 15px;}
+.card_info li a {color: #00adbb;}
+.arrow {
+	display: inline-block;
+	background-color: #00adbb;
+	padding: 20px;
+	position: absolute;
+	left: -25px;
+	top: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.arrow:hover {background-color: #03c7d7;}
+.arrow + .arrow {
+	transform: rotate(180deg);
+	left: auto;
+	right: -25px;
+}
+.modal p:last-child {margin-top: 35px;}
+/*************Footer - Seer ***************/
+footer {
+	background-color: #4b4e53;
+	color: #989fa9;
+	padding: 16px 0;
+	text-align: center;
+	font-size: 18px;
+}
